@@ -68,6 +68,7 @@
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Application" />
       <module name="homework3.controller.main" />
+      <option name="PROGRAM_PARAMETERS" value="105 &quot;books.txt&quot;" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -79,6 +80,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Application" />
+      <item itemvalue="Application.Main" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Application" />
@@ -101,7 +106,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666340831316</updated>
-      <workItem from="1666340833682" duration="14432000" />
+      <workItem from="1666340833682" duration="17884000" />
     </task>
     <servers />
   </component>

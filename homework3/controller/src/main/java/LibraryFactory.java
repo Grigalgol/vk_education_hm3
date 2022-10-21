@@ -1,15 +1,15 @@
-import entity.Book;
+import books_factory.BooksFactory;
+import books_factory.FileBookFactory;
 import exceptions.SmallCapacityException;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import javax.inject.Inject;
 
 public class LibraryFactory {
 
-    private static BooksFactory booksFactory = new FileBookFactory("books.txt"); //todo изменить
+    @Inject
+    private BooksFactory booksFactory;
 
-    public static Library library(int capacity) throws SmallCapacityException {
+    public Library library(int capacity) throws SmallCapacityException {
         return new Library(capacity, booksFactory);
     }
 

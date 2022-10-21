@@ -1,3 +1,4 @@
+import books_factory.BooksFactory;
 import entity.Book;
 import exceptions.EmptyCellException;
 import exceptions.SmallCapacityException;
