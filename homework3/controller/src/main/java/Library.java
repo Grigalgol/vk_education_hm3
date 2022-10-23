@@ -23,6 +23,7 @@ public class Library {
         }
     }
 
+
     public Book[] getCells() {
         return cells;
     }
