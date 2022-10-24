@@ -56,7 +56,7 @@ public class Library {
 
     public void printContentToTheConsole() {
         for (int numberOfCell = 0; numberOfCell < cells.length; numberOfCell++) {
-            System.out.println("Cell number " + numberOfCell + " [" + cells[numberOfCell] + "] ");
+            System.out.println("Cell number " + numberOfCell + " [" + cells[numberOfCell] + "]");
         }
     }
 
