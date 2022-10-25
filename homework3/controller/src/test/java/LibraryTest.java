@@ -3,6 +3,7 @@ import entity.Author;
 import entity.Book;
 import exceptions.EmptyCellException;
 import exceptions.SmallCapacityException;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -15,11 +16,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
 
+    @NotNull
     private BooksFactory booksFactory;
+    @NotNull
     private List<Book> libraryFromBooksFactory;
+    @NotNull
+    private Library library;
 
     @BeforeEach
-    public void beforeEachTests() {
+    public void beforeEachTests() throws SmallCapacityException {
         booksFactory = Mockito.mock(BooksFactory.class);
         libraryFromBooksFactory = Arrays.asList(
                 new Book("Book 0", new Author("Author0")),
@@ -27,6 +32,7 @@ class LibraryTest {
                 new Book("Book 2", new Author("Author0")));
 
         Mockito.when(booksFactory.books()).thenReturn(libraryFromBooksFactory);
+        library = new Library(libraryFromBooksFactory.size(), booksFactory);
     }
 
     //Библиотека бросает исключение при создании, если ее вместимость меньше чем количество книг, возвращаемое фабрикой.
@@ -38,19 +44,17 @@ class LibraryTest {
     //При создании библиотеки все книги расставлены по ячейкам в порядке как они возвращаются фабрикой книг. Остальные ячейки пусты.
     @Test
     public void testCorrectBooksPositionInCell() throws SmallCapacityException, EmptyCellException {
-        Library newLibrary = new Library(libraryFromBooksFactory.size(), booksFactory);
         for (int i = 0; i < libraryFromBooksFactory.size(); i++) {
-            assertEquals(libraryFromBooksFactory.get(i), newLibrary.getBookFromCell(i));
+            assertEquals(libraryFromBooksFactory.get(i), library.getBookFromCell(i));
         }
-        for (int i = libraryFromBooksFactory.size(); i < newLibrary.getCells().length; i++) {
-            assertNull(newLibrary.getBookFromCell(i));
+        for (int i = libraryFromBooksFactory.size(); i < library.getCells().length; i++) {
+            assertNull(library.getBookFromCell(i));
         }
     }
 
     //При взятии книги информация о ней и ячейке выводится.
     @Test
     public void testPrintInfoAboutBook() throws SmallCapacityException, EmptyCellException, IOException {
-        Library newLibrary = new Library(libraryFromBooksFactory.size(), booksFactory);
 
         //ридер-обертка на System.out
         try (
@@ -60,7 +64,7 @@ class LibraryTest {
             System.setOut(stream);
 
             int numberOfCell = 0;
-            newLibrary.getBookFromCell(numberOfCell);
+            library.getBookFromCell(numberOfCell);
             assertEquals(
                     "Cell number " + numberOfCell + " [" + libraryFromBooksFactory.get(numberOfCell) + "]".trim(),
                     outputStream.toString().trim()
@@ -79,8 +83,7 @@ class LibraryTest {
     //При взятии книги возвращается именно та книга, что была в этой ячейке.
     @Test
     public void testReturnCertainBook() throws SmallCapacityException, EmptyCellException {
-        Library newLibrary = new Library(libraryFromBooksFactory.size(), booksFactory);
-        Book book = newLibrary.getBookFromCell(1);
+        Book book = library.getBookFromCell(1);
         assertEquals(book, libraryFromBooksFactory.get(1));
     }
 
@@ -97,21 +100,19 @@ class LibraryTest {
     //Если при добавлении книги свободных ячеек нет, библиотека бросает исключение.
     @Test
     public void testFailAddBook() throws SmallCapacityException {
-        Library newLibrary = new Library(libraryFromBooksFactory.size(), booksFactory);
-            assertThrows(EmptyCellException.class, () -> newLibrary.setBookInCell(new Book("b1", new Author("griga"))));
+            assertThrows(EmptyCellException.class, () -> library.setBookInCell(new Book("b1", new Author("griga"))));
     }
 
     //Вызов метода “напечатать в консоль содержимое” выводит информацию о содержимом ячеек библиотеки
     @Test
-    public void testPrintBooksFromCells() throws SmallCapacityException, IOException {
-        Library newLibrary = new Library(libraryFromBooksFactory.size(), booksFactory);
-        assertEquals(
-                expectedString(), actualString(newLibrary)
-        );
+    public void testPrintBooksFromCells() throws IOException {
+        assertEquals(expectedString(), actualString(library));
     }
 
-    private String actualString(Library library) throws IOException {
+    private String actualString(@NotNull Library library) throws IOException {
         String actual;
+
+        //ридер-обертка на System.out
         try (
                 PrintStream consoleOutput = System.out;
                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream();

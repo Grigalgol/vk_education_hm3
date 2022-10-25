@@ -83,6 +83,14 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.LibraryTest">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Application" />
+      <module name="homework3.controller.main" />
+      <option name="PROGRAM_PARAMETERS" value="105 &quot;books.txt&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LibraryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -152,29 +160,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="LibraryTest.testReturnCertainBook" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":controller:test" />
-            <option value="--tests" />
-            <option value="&quot;LibraryTest.testReturnCertainBook&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="LibraryTest.testSetBookInFirstEmptyCell" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -199,19 +184,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.Application" />
       <item itemvalue="Gradle.LibraryTest.testFailAddBook" />
       <item itemvalue="Gradle.LibraryTest.testPrintBooksFromCells" />
-      <item itemvalue="Gradle.LibraryTest.testReturnCertainBook" />
       <item itemvalue="Gradle.LibraryTest.testSetBookInFirstEmptyCell" />
       <item itemvalue="Gradle.LibraryTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.LibraryTest" />
+        <item itemvalue="Application.Application" />
         <item itemvalue="Gradle.LibraryTest.testPrintBooksFromCells" />
         <item itemvalue="Gradle.LibraryTest.testFailAddBook" />
         <item itemvalue="Gradle.LibraryTest.testSetBookInFirstEmptyCell" />
-        <item itemvalue="Gradle.LibraryTest.testReturnCertainBook" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +221,8 @@
       <workItem from="1666538076387" duration="863000" />
       <workItem from="1666540357900" duration="361000" />
       <workItem from="1666549952661" duration="4320000" />
-      <workItem from="1666635270262" duration="9085000" />
+      <workItem from="1666635270262" duration="9512000" />
+      <workItem from="1666684171633" duration="3074000" />
     </task>
     <servers />
   </component>
