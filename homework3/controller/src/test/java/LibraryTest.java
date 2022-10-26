@@ -35,12 +35,6 @@ class LibraryTest {
         library = new Library(libraryFromBooksFactory.size(), booksFactory);
     }
 
-    //Библиотека бросает исключение при создании, если ее вместимость меньше чем количество книг, возвращаемое фабрикой.
-    @Test
-    public void testCapacityThatLessThanCountBooks() {
-        assertThrows(SmallCapacityException.class, () -> new Library(libraryFromBooksFactory.size() - 1, booksFactory));
-    }
-
     //При создании библиотеки все книги расставлены по ячейкам в порядке как они возвращаются фабрикой книг. Остальные ячейки пусты.
     @Test
     public void testCorrectBooksPositionInCell() throws SmallCapacityException, EmptyCellException {
@@ -96,6 +90,8 @@ class LibraryTest {
         newLibrary.setBookInCell(new Book("Java VK", new Author("Gregory")));
         assertNotNull(newLibrary.getBookFromCell(libraryFromBooksFactory.size()));
     }
+
+
 
     //Если при добавлении книги свободных ячеек нет, библиотека бросает исключение.
     @Test

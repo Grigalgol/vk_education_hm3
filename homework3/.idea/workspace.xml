@@ -21,12 +21,20 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/controller">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="homework3" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="homework3" type="f1a62948:ProjectNode" />
+                <item name="controller" type="2d1252cf:ModuleNode" />
               </path>
             </expand>
             <select />
@@ -39,8 +47,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -82,7 +90,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.LibraryTest">
+  <component name="RunManager" selected="Application.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Application" />
       <module name="homework3.controller.main" />
@@ -105,29 +113,6 @@
             <option value=":controller:test" />
             <option value="--tests" />
             <option value="&quot;LibraryTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="LibraryTest.testFailAddBook" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":controller:test" />
-            <option value="--tests" />
-            <option value="&quot;LibraryTest.testFailAddBook&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -160,7 +145,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="LibraryTest.testSetBookInFirstEmptyCell" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestWithInject" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -173,7 +158,30 @@
           <list>
             <option value=":controller:test" />
             <option value="--tests" />
-            <option value="&quot;LibraryTest.testSetBookInFirstEmptyCell&quot;" />
+            <option value="&quot;TestWithInject&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestWithInject.testCapacityThatLessThanCountBooks" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":controller:test" />
+            <option value="--tests" />
+            <option value="&quot;TestWithInject.testCapacityThatLessThanCountBooks&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -185,18 +193,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Application" />
-      <item itemvalue="Gradle.LibraryTest.testFailAddBook" />
+      <item itemvalue="Gradle.TestWithInject" />
+      <item itemvalue="Gradle.TestWithInject.testCapacityThatLessThanCountBooks" />
       <item itemvalue="Gradle.LibraryTest.testPrintBooksFromCells" />
-      <item itemvalue="Gradle.LibraryTest.testSetBookInFirstEmptyCell" />
       <item itemvalue="Gradle.LibraryTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TestWithInject" />
         <item itemvalue="Gradle.LibraryTest" />
+        <item itemvalue="Gradle.TestWithInject.testCapacityThatLessThanCountBooks" />
         <item itemvalue="Application.Application" />
         <item itemvalue="Gradle.LibraryTest.testPrintBooksFromCells" />
-        <item itemvalue="Gradle.LibraryTest.testFailAddBook" />
-        <item itemvalue="Gradle.LibraryTest.testSetBookInFirstEmptyCell" />
       </list>
     </recent_temporary>
   </component>
@@ -222,7 +230,8 @@
       <workItem from="1666540357900" duration="361000" />
       <workItem from="1666549952661" duration="4320000" />
       <workItem from="1666635270262" duration="9512000" />
-      <workItem from="1666684171633" duration="3074000" />
+      <workItem from="1666684171633" duration="3543000" />
+      <workItem from="1666805310397" duration="2066000" />
     </task>
     <servers />
   </component>

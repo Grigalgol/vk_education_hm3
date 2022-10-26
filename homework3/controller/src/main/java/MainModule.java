@@ -5,14 +5,14 @@ import org.jetbrains.annotations.NotNull;
 
 public class MainModule extends AbstractModule {
 
-    private final String[] args;
+    private final String sourcePath;
 
-    public MainModule(@NotNull String [] args) {
-        this.args = args;
+    public MainModule(@NotNull String  sourcePath) {
+        this.sourcePath = sourcePath;
     }
 
     @Override
     protected void configure() {
-        bind(BooksFactory.class).toInstance(new FileBookFactory(args[1]));
+        bind(BooksFactory.class).toInstance(new FileBookFactory(sourcePath));
     }
 }
